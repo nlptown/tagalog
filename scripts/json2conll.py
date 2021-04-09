@@ -2,7 +2,7 @@ import click
 import json
 import csv
 
-from montague import parsing
+from tagalog import parsing
 
 
 @click.command()

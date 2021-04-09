@@ -3,11 +3,11 @@ INSIDE_PREFIX = "I"
 OUTSIDE_LABEL = "O"
 
 
-def get_id2label(montague_json):
+def get_id2label(tagalog_json):
     """ Get a dictionary that maps the id of a label to the label text. """
 
     id2label = {}
-    for label_set in montague_json["label_sets"]:
+    for label_set in tagalog_json["label_sets"]:
         for label in label_set["labels"]:
             id2label[label["id"]] = label["text"]
 
@@ -48,15 +48,15 @@ def get_best_document_annotation(document_annotations):
         return document_annotations[0]
 
 
-def get_tokens_and_labels(montague_json):
-    """ Get all tokens and their labels from a Montague JSON.
+def get_tokens_and_labels(tagalog_json):
+    """ Get all tokens and their labels from a Tagalog JSON.
     For every document, this yields the document text, a list of the tokens
     and a list of the corresponding labels.
     """
 
-    id2label = get_id2label(montague_json)
+    id2label = get_id2label(tagalog_json)
 
-    for document in montague_json["documents"]:
+    for document in tagalog_json["documents"]:
         text = document["content"]
         best_document_annotation = get_best_document_annotation(document["document_annotations"])
 

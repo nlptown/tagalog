@@ -1,6 +1,6 @@
 import json
 
-from montague.parsing import get_tokens_and_labels
+from tagalog.parsing import get_tokens_and_labels
 
 
 def test_json_parsing():
